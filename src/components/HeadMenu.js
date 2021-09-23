@@ -5,7 +5,6 @@ import { Menu } from 'semantic-ui-react'
 const HeadMenu = () => {
     const [activeItem, setActiveItem] = useState('/')
     const handleItemClick = (event, {name}) => {
-        console.log(name);
         setActiveItem(name);
     }
     return(

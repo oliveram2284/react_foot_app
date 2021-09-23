@@ -4,7 +4,6 @@ import { Card} from 'semantic-ui-react'
 
 
 const MealCard = ({meal}) => {
-    console.log("==> meal: %o",meal)
     return(
         <Card key={meal.idMeal}
             image={meal.strMealThumb}

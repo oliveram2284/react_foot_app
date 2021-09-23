@@ -12,7 +12,6 @@ const MealDetail = () => {
     const [meals, setMeals] = useState(false);
     useEffect(()=>{
         axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`).then((res)=>{
-            console.log(res.data.meals);
             setMealDetail(res.data.meals[0]);
         });
     },[mealId]);
@@ -52,11 +51,11 @@ const MealDetail = () => {
                             </Table.Header>
 
                             <Table.Body>
-                                {Array.from({ length: 20 }, (_, i)=>{
+                                {Array.from({ length: 20 }, (_, i) => {
 
                                     if( mealDetail[`strIngredient${i}`] && mealDetail[`strIngredient${i}`] !=='' ) {
                                         return  (
-                                            <Table.Row>
+                                            <Table.Row key={i}>
                                                 <Table.Cell>
                                                 <Header as='h4' >
                                                     {mealDetail[`strIngredient${i}`]}
